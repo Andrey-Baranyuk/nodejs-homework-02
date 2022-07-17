@@ -24,10 +24,10 @@
     "phone": "(692) 802-2949"
   },
   {
+    "name": "Bors Jerry",
     "id": "5",
-    "name": "Cyrus Jackson",
-    "email": "nibh@semsempererat.com",
-    "phone": "(501) 472-5218"
+    "email": "boorsuk@gmail.com",
+    "phone": "0975565267"
   },
   {
     "id": "6",
@@ -54,9 +54,15 @@
     "phone": "(704) 398-7993"
   },
   {
-    "id": "10",
-    "name": "Alec Howard",
-    "email": "Donec.elementum@scelerisquescelerisquedui.net",
-    "phone": "(748) 206-2688"
+    "name": "Ted Lasso",
+    "email": "tedlasso@gmail.com",
+    "phone": "0998889977",
+    "id": "c6fHT_KoRoXle7Dvo7Uij"
+  },
+  {
+    "name": "Boris Jhonson",
+    "email": "borisyuk@gmail.com",
+    "phone": "0935054767",
+    "id": "QVqGEeC_020SMggUaYCBe"
   }
 ]
