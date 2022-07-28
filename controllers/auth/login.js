@@ -13,7 +13,7 @@ const login = async (req, res, next) => {
             code: 401,
             message: 'Email or password is wrong'
         })
-    }
+    };
 
     const payload = { id: user._id };
 
