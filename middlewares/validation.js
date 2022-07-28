@@ -29,6 +29,7 @@ module.exports = {
   }
         next();
   },
+  
   statusValidation: (req, res, next) => {
     const { favorite } = req.body;
     const schema = Joi.object({
