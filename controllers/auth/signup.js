@@ -11,7 +11,7 @@ const signup = async (req, res, next) => {
             message: 'Email in use'
         });
     }
-    const hashPassword = bcrypt.compare(password, 10);
+    const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 
     await User.create({ email, password: hashPassword })
     res.status(201).json({
