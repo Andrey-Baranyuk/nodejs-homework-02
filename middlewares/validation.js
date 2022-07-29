@@ -29,6 +29,7 @@ module.exports = {
   }
         next();
   },
+  
   statusValidation: (req, res, next) => {
     const { favorite } = req.body;
     const schema = Joi.object({
@@ -43,5 +44,42 @@ module.exports = {
     });
   }
         next();
+  },
+
+  userAuthValidation: (req, res, next) => {
+  const { email, password } = req.body;
+  const schema = Joi.object({
+    email: Joi.string()
+      .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
+      .required(),
+    password: Joi.string().min(4).alphanum().required()
+  });
+  const validationResult = schema.validate({ email, password });
+  if (validationResult.error) {
+    return res.status(400).json({
+      status: 'error',
+      code: 400,
+      message: validationResult.error.message,
+    });
   }
+  next()
+  },
+  
+  subscriptionValidation: (req, res, next) => {
+    const { subscription } = req.body;
+    const schema = Joi.object({
+      subscription: Joi.string().valid('starter', 'pro', 'business').required()
+    });
+    const validationResult = schema.validate({ subscription });
+    if (validationResult.error) {
+      return res.status(400).json({
+        status: 'error',
+        code: 400,
+        message: validationResult.error.message,
+      });
+    }
+    next();
+  }
+ 
 }
+
